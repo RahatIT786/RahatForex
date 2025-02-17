@@ -249,7 +249,7 @@
 
                 <hr>
                 <div class="forex_submit">
-                    <p style="text-align:center ">Communication Details (Your order confirmation details will be sent on
+                    <p style="text-align:center ">Communication Details (Your order confirmation details will be sent to
                         these contact details)</p>
                     @if (session('success'))
                         <div class="alert alert-success" id="alert-message">
