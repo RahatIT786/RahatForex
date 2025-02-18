@@ -90,7 +90,7 @@
                         </li>
                         <li>
                             <a href="{{ route('historical') }}" >
-                                Historical data
+                                Important Notes
                             </a>
                         </li>
                     </ul>
