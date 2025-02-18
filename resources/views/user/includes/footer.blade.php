@@ -58,34 +58,39 @@
                     </h5>
                     <ul>
                         <li>
-                            <a href="https://visa.mofa.gov.sa/visaservices/searchvisa">
+                            <a href="https://visa.mofa.gov.sa/visaservices/searchvisa" target="_blank">
                                   Umrah Visa Download
                             </a>
                         </li>
                         <li>
-                            <a href="https://visa.mofa.gov.sa/visaservices/searchvisa">
+                            <a href="https://visa.mofa.gov.sa/visaservices/searchvisa" target="_blank">
                                 Umrah Insurance Download
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.aihut.in/">
+                            <a href="https://www.aihut.in/" target="_blank">
                                 All India Hajj & Umrah Tours Pvt. Ltd. <br> (Start your own business)
                             </a>
                         </li>
                         <li>
-                            <a href="https://pto.haj.gov.in/">
+                            <a href="https://pto.haj.gov.in/" target="_blank">
                                 PTO Hajj GOV
                             </a>
                         </li>
 
                         <li>
-                            <a href="https://www.nusuk.sa/">
+                            <a href="https://www.nusuk.sa/" target="_blank">
                                 Nusuk
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.visitsaudi.com/en">
+                            <a href="https://www.visitsaudi.com/en" target="_blank">
                                 Saudi Tourism Authority
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('historical') }}" >
+                                Historical data
                             </a>
                         </li>
                     </ul>
