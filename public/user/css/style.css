@@ -868,16 +868,18 @@ section.app_section .img-box img {
 
 /* forex form css */
 .forex_container{
-    width: 70%;
+    width: 60%;
     height: 200%;
     border: 2px solid black;
-    margin-left: 15%;
+    margin-left: 20%;
     border-radius: 10px;
 
 }
 .Forex_nav {
     background-color: #333;
     padding: 10px 0;
+
+
 }
 
 .Forex_nav ul {
@@ -919,58 +921,81 @@ section.app_section .img-box img {
 
 }
 
-.forex_footer img{
-    width: 2rem;
-    margin-top: 10px;
+/* whats app css */
+#whatsapp{
+    height: clamp(20px,10vw,4rem);
+    z-index: 4;
+    position: fixed;
+    right: 1rem;
+    bottom:7rem;
+    cursor: pointer;
 }
-.forex_footer_whatsapp{
-    margin-left: 55%;
 
-}
 
-.forex_submit .submit_forms {
+/* .forex_submit .submit_forms {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 7%;
+    margin-left: center;
 }
 
 .submit_forms .form_mobile {
     flex: 1;
     margin-right: 10px;
 }
+.submit_forms{
+    display: flex;
+    justify-content: center; /* Centers horizontally *
+    align-items: center;
+}
 
 .submit_forms .form_mobile:last-child {
-    margin-right: 0;
+    display: flex;
+    justify-content: center; /* Centers horizontally *
+    align-items: center;
 }
 
 .submit_forms input,
 .submit_forms button {
     padding: 10px;
     box-sizing: border-box;
+    display: flex;
+    justify-content: center; /* Centers horizontally *
+    align-items: center;
 }
 
 .submit_forms input {
     flex: 2;
-    /* Increase the width of the input */
+
+    /* Increase the width of the input *
 }
 
 .submit_forms button {
     flex: 1;
-    /* Adjust the button width to take less space */
+    /* Adjust the button width to take less space *
     width: 100%;
-    /* Allow the button to stretch to fill its container */
+    /* Allow the button to stretch to fill its container *
+} */
+.submit_forms {
+    display: flex;
+    gap: 10px;
+    /* Space between form elements */
+    width: 100%;
+     display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;
+}
+.submit_forms input{
+    height: 40px;
 }
 
+/* this is start for first form in home page */
 
 .forex_form form {
     display: flex;
     flex-wrap: nowrap;
-    /* Prevent wrapping */
     justify-content: space-between;
-    /* Space out form items */
     align-items: center;
-    /* Vertically align form elements */
     margin-top: 30px;
     margin-bottom: 30px;
     margin-left: 50px;
@@ -981,9 +1006,10 @@ section.app_section .img-box img {
     gap: 40px;
     /* Space between form elements */
     width: 100%;
-    margin-left: 10%;
+     display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;
 }
-
 .form-row {
     display: flex;
     flex-direction: column;
@@ -1004,10 +1030,36 @@ section.app_section .img-box img {
 .form-row select {
     width: 100%;
     /* Make input/select take full width of the column */
-    padding: 8px;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+/* .form-row option{
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    color: rgb(20, 30, 55);
+    font-size: 14px;
+    line-height: 20px;
+} */
+.total_money{
+    font-family: "Inter", sans-serif; /* Font family */
+    font-style: normal;              /* Font style */
+    font-weight: 600;                /* Font weight */
+    color: rgb(46, 60, 87);          /* Text color */
+    font-size: 30px;                 /* Font size */
+    line-height: 32px;
+}
+.Convert{
+    margin-left: 17%;
+}
+.convert_amount{
+   font-size: 3rem;
+
+}
+
+
+
 
 
 /* this code use for responsive forex currency */
@@ -1033,7 +1085,7 @@ section.app_section .img-box img {
         padding: 10px;
     }
 
-    .forex_footer {
+    /* .forex_footer {
         height: auto;
         padding: 10px;
         text-align: center;
@@ -1042,7 +1094,7 @@ section.app_section .img-box img {
     .forex_footer_whatsapp {
         margin-left: 0;
         text-align: center;
-    }
+    } */
 
     .forex_submit .submit_forms {
         flex-direction: column;
@@ -1052,8 +1104,11 @@ section.app_section .img-box img {
 
     .submit_forms .form_mobile {
         width: 100%;
-        margin-right: 0;
-        margin-bottom: 10px;
+        /* margin-right: 0;
+        margin-bottom: 10px; */
+        display: flex;
+        justify-content: center; /* Centers horizontally */
+        align-items: center;
     }
 
     .submit_forms input,
@@ -1078,9 +1133,4 @@ section.app_section .img-box img {
     }
 }
 
-.Convert{
-    margin-left: 20%;
-}
-.convert_amount{
-   font-size: 3rem;
-}
+
