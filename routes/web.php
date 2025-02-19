@@ -10,8 +10,8 @@ use App\Livewire\User\HistoricalData;
 use App\Http\Controllers\AuthController;
 
 
-use App\livewire\Admin\Dashboard;
-use App\livewire\Admin\ForexRequest;
+use App\Livewire\Admin\Dashboard;
+use App\Livewire\Admin\ForexRequest;
 
 
 
