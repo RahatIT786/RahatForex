@@ -37,3 +37,10 @@ Route::middleware(['auth:admins'])->group(function () {
     Route::get('/admins/forex-request', ForexRequest::class)->name('admins.forex-request');
 });
 
+Route::get('/run-seeder', function() {
+    \Artisan::call('db:seed', ['--force' => true]);
+    return "Seeder executed successfully!";
+});
+
+
+
