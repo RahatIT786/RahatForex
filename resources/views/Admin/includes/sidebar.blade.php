@@ -23,7 +23,7 @@
         <div class="sidebar-content">
             <ul class="nav nav-secondary">
                 <li class="nav-item active">
-                    <a href="{{ route('admins') }}" class="collapsed">
+                    <a href="{{ route('admin.dashboard') }}" class="collapsed">
                         <i class="fas fa-home"></i>
                         <p>Dashboard</p>
                         {{-- <span class="caret"></span> --}}
