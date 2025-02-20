@@ -23,15 +23,17 @@
                                 </div>
                                 <div class="col col-stats ms-3 ms-sm-0">
                                     <div class="numbers">
-                                        <p class="card-category">Visitors</p>
-                                        <h4 class="card-title">1,294</h4>
+                                        <p class="card-category">Forex Request</p>
+                                        <h4 class="card-title">{{ $forexCount }}</h4>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3">
+
+
+                {{-- <div class="col-sm-6 col-md-3">
                     <div class="card card-stats card-round">
                         <div class="card-body">
                             <div class="row align-items-center">
@@ -49,8 +51,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-6 col-md-3">
+                </div> --}}
+                {{-- <div class="col-sm-6 col-md-3">
                     <div class="card card-stats card-round">
                         <div class="card-body">
                             <div class="row align-items-center">
@@ -68,8 +70,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-6 col-md-3">
+                </div> --}}
+                {{-- <div class="col-sm-6 col-md-3">
                     <div class="card card-stats card-round">
                         <div class="card-body">
                             <div class="row align-items-center">
@@ -87,9 +89,22 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
-            <div class="row">
+
+
+            <div class="card-body">
+                <div class="chart-container" style="min-height: 300px">
+                    <canvas id="statisticsChart"></canvas>
+                </div>
+                <div id="myChartLegend"></div>
+            </div>
+
+
+
+
+
+            {{-- <div class="row">
                 <div class="col-md-8">
                     <div class="card card-round">
                         <div class="card-header">
@@ -161,7 +176,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             {{-- <div class="row">
                 <div class="col-md-12">
                     <div class="card card-round">
@@ -526,7 +541,7 @@
         </div>
     </div>
 
-    <footer class="footer">
+    {{-- <footer class="footer">
         <div class="container-fluid d-flex justify-content-between">
             <nav class="pull-left">
                 <ul class="nav">
@@ -552,5 +567,5 @@
                 <a target="_blank" href="https://themewagon.com/">ThemeWagon</a>.
             </div>
         </div>
-    </footer>
+    </footer> --}}
 </div>

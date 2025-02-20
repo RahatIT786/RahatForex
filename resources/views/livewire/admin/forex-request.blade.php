@@ -28,6 +28,13 @@
                     <div class="card">
                         <div class="card-header">
                             <h4 class="card-title">Basic</h4>
+                            @if (session()->has('message'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                {{ session('message') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        @endif
+
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -49,10 +56,11 @@
                                         <td>{{ $forex->name }}</td>
                                         <td>{{ $forex->mobile }}</td>
                                         <td>{{ $forex->email }}</td>
-                                        
-                                        <td >
-                                            <i wire:click="delete({{ $forex->id }})" class="fa-solid fa-trash text-danger"></i>
+
+                                        <td>
+                                            <i wire:click="delete({{ $forex->id }})" wire:loading.attr="disabled" class="fa-solid fa-trash text-danger"></i>
                                         </td>
+
 
                                     </tr>
                                     @endforeach
@@ -844,6 +852,10 @@
                         </div>
                     </div>
                 </div> --}}
+
+              
+
+
             </div>
         </div>
     </div>

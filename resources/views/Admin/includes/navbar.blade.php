@@ -66,26 +66,37 @@
                             <li>
                                 <div class="user-box">
                                     <div class="avatar-lg">
-                                        <img src="assets/img/profile.jpg" alt="image profile"
+                                        <img src="{{ asset('admin/assets/logo/rahatITdepartment.png') }}" alt="image profile"
                                             class="avatar-img rounded" />
                                     </div>
                                     <div class="u-text">
-                                        <h4>Hizrian</h4>
-                                        <p class="text-muted">hello@example.com</p>
-                                        <a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View
-                                            Profile</a>
+                                        <h4>Rahat Forex</h4>
+                                        <p class="text-muted">  info@rahatforex.com</p>
+                                        {{-- <a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View
+                                            Profile</a> --}}
+                                            <a  class="btn btn-xs btn-secondary btn-sm " href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                Logout
+                                            </a>
+                                            <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
+                                                @csrf
+                                            </form>
                                     </div>
                                 </div>
                             </li>
                             <li>
-                                <div class="dropdown-divider"></div>
+                                {{-- <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">My Profile</a>
                                 <a class="dropdown-item" href="#">My Balance</a>
                                 <a class="dropdown-item" href="#">Inbox</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Account Setting</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Logout</a>
+                                <div class="dropdown-divider"></div> --}}
+                                {{-- <a class="dropdown-item" href="#">Account Setting</a>
+                                <div class="dropdown-divider"></div> --}}
+                                {{-- <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+                                <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form> --}}
                             </li>
                         </div>
                     </ul>
