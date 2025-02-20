@@ -1,5 +1,5 @@
 <?php
-// app/Mail/QuoteRequestMail.php
+// app/Mail/QuoteRequestMail
 namespace App\Mail;
 
 use Illuminate\Mail\Mailable;
