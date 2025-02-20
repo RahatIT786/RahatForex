@@ -156,7 +156,7 @@
                     <p style="text-align:center ">Communication Details (Your order confirmation details will be sent to
                         these contact details)</p>
                     @if (session('success'))
-                        <div class="alert alert-success" id="alert-message">
+                        <div class="alert alert-success text-center" id="alert-message">
                             {{ session('success') }}
                         </div>
                     @endif

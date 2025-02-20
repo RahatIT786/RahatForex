@@ -39,7 +39,7 @@ class Home extends Component
         ];
 
         // Send the email with the data
-        Mail::to('ahamadraja9721@gmail.com')->send(new QuoteRequestMail($data));
+        Mail::to('info@rahatforex.com')->send(new QuoteRequestMail($data));
 
         // Optionally reset the form fields after submission
         $this->reset();
