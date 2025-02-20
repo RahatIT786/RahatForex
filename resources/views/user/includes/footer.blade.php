@@ -42,9 +42,9 @@
                         <i class="fa-solid fa-phone"></i>
                         <p>+91 7021933532</p>
                     </a>
-                    <a href="mailto:info@rahatforex.com" class="contact-item">
+                    <a href="mailto:forex@rahat.in" class="contact-item">
                         <i class="fa-solid fa-envelope"></i>
-                        <p>info@rahatforex.com</p>
+                        <p>forex@rahat.in</p>
                     </a>
                 </div>
             </div>
@@ -57,16 +57,16 @@
                         Useful Links
                     </h5>
                     <ul>
-                        <li>
+                        {{-- <li>
                             <a href="https://visa.mofa.gov.sa/visaservices/searchvisa" target="_blank">
                                   Umrah Visa Download
                             </a>
-                        </li>
-                        <li>
+                        </li> --}}
+                        {{-- <li>
                             <a href="https://visa.mofa.gov.sa/visaservices/searchvisa" target="_blank">
                                 Umrah Insurance Download
                             </a>
-                        </li>
+                        </li> --}}
                         <li>
                             <a href="https://www.aihut.in/" target="_blank">
                                 All India Hajj & Umrah Tours Pvt. Ltd. <br> (Start your own business)
@@ -90,7 +90,7 @@
                         </li>
                         <li>
                             <a href="{{ route('historical') }}" >
-                                Important Notes
+                                About Us
                             </a>
                         </li>
                     </ul>
