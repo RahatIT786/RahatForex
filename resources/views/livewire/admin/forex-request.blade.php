@@ -29,11 +29,12 @@
                         <div class="card-header">
                             <h4 class="card-title">Basic</h4>
                             @if (session()->has('message'))
-                            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                {{ session('message') }}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>
-                        @endif
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    {{ session('message') }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
+                                </div>
+                            @endif
 
                         </div>
                         <div class="card-body">
@@ -45,26 +46,28 @@
                                             <th>Name</th>
                                             <th>Mobile</th>
                                             <th>Email</th>
-                                             <th>Delete</th>
+                                            <th>Delete</th>
 
 
                                         </tr>
-                                  <tbody>
-                                    @foreach ($Forexmoney as $forex )
-                                    <tr>
-                                        <td>{{ $loop->iteration}}</td>
-                                        <td>{{ $forex->name }}</td>
-                                        <td>{{ $forex->mobile }}</td>
-                                        <td>{{ $forex->email }}</td>
+                                    <tbody>
+                                        @foreach ($Forexmoney as $forex)
+                                            <tr>
+                                                <td>{{ $loop->iteration }}</td>
+                                                <td>{{ $forex->name }}</td>
+                                                <td>{{ $forex->mobile }}</td>
+                                                <td>{{ $forex->email }}</td>
 
-                                        <td>
-                                            <i wire:click="delete({{ $forex->id }})" wire:loading.attr="disabled" class="fa-solid fa-trash text-danger"></i>
-                                        </td>
+                                                <td>
+                                                    <i wire:click="delete({{ $forex->id }})"
+                                                        wire:loading.attr="disabled"
+                                                        class="fa-solid fa-trash text-danger"></i>
+                                                </td>
 
 
-                                    </tr>
-                                    @endforeach
-                                  </tbody>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
 
                                 </table>
                             </div>
@@ -853,11 +856,14 @@
                     </div>
                 </div> --}}
 
-              
+                <!-- Blade View -->
 
+
+
+
+               
 
             </div>
         </div>
     </div>
 </div>
-

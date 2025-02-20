@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\MoneyForex;
 use App\Mail\ForexQuoteRequest;
 use Illuminate\Support\Facades\Mail;
+use App\Mail\QuoteRequestMail;
 
 
 class Home extends Component
@@ -28,29 +29,23 @@ class Home extends Component
 
     public function submitForm()
     {
-        $this->validate();
+        $this->validate();  // Validate form inputs
 
-        MoneyForex::create([
+        // Prepare the data to pass to the email
+        $data = [
             'name' => $this->name,
             'mobile' => $this->mobile,
             'email' => $this->email,
-        ]);
+        ];
 
-        try {
-            // Send a simple raw email to test SMTP
-            Mail::raw('This is a test email for Forex quote request', function ($message) {
-                $message->to(['ahamadraja9721@gmail.com', 'rahatit486@gmail.com'])
-                        ->subject('Test Forex Quote Request');
-            });
+        // Send the email with the data
+        Mail::to('ahamadraja9721@gmail.com')->send(new QuoteRequestMail($data));
 
-
-        } catch (\Exception $e) {
-            session()->flash('error', 'Error sending email: ' . $e->getMessage());
-        }
-        session()->flash('success', 'Forex quote request sent successfully.');
+        // Optionally reset the form fields after submission
         $this->reset();
 
-
+        // Flash message to confirm the email was sent
+        session()->flash('success', 'Quote request sent successfully!');
     }
 
 

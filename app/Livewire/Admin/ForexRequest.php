@@ -10,15 +10,15 @@ class ForexRequest extends Component
     public $Forexmoney;
     public $forexCount;
 
+
+
     public function mount()
     {
-        // Get all Forex requests
         $this->Forexmoney = MoneyForex::all();
-
-        // Count total forex requests
         $this->forexCount = $this->Forexmoney->count();
-       
-       
+
+        // Prepare the data for the chart (e.g., counts per month or category)
+
     }
 
     public function render()

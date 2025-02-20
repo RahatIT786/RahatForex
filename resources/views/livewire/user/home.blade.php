@@ -165,12 +165,13 @@
                         <div class="submit_forms">
                             <div class="form_mobile">
                                 <input type="text" wire:model="name" placeholder="Enter name" min="1">
-                                @error('mobile')
+                                @error('name')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="form_mobile">
-                                <input type="text" wire:model="mobile" placeholder="Mobile Number" min="1">
+                                <input type="text" wire:model="mobile" placeholder="Mobile Number"
+                                    min="1">
                                 @error('mobile')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
