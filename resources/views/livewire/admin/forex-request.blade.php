@@ -55,8 +55,23 @@
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $forex->name }}</td>
-                                                <td>{{ $forex->mobile }}</td>
-                                                <td>{{ $forex->email }}</td>
+                                                <td>
+                                                    <a href="tel:{{ $forex->mobile }}" class="contact-link">
+                                                        <i class="fa-solid fa-phone phone-icon"></i>
+                                                    </a>
+                                                    <a href="https://wa.me/{{ $forex->mobile }}" class="contact-link" target="_blank">
+                                                        <i class="fa-brands fa-whatsapp whatsapp-icon"></i>
+                                                    </a>
+
+                                                        {{ $forex->mobile }}
+
+                                                </td>
+
+                                                <td>
+                                                    <a href="mailto:{{ $forex->email }}">
+                                                        <i class="fa-solid fa-envelope phone-icon"></i> </a>
+                                                        {{ $forex->email }}
+                                                    </td>
 
                                                 <td>
                                                     <i wire:click="delete({{ $forex->id }})"
@@ -74,6 +89,40 @@
                         </div>
                     </div>
                 </div>
+                <style>
+                    /* Make the link text white */
+                    .contact-link {
+                        color: black;
+                        text-decoration: none;
+                    }
+
+                    /* Change phone icon color */
+                    .phone-icon {
+                        color: #3498db;
+                        /* Blue */
+                        margin-right: 8px;
+                        font-size: 1.5rem;
+                    }
+
+                    /* Change WhatsApp icon color */
+                    .whatsapp-icon {
+                        color: #25D366;
+                        /* WhatsApp green */
+                        margin-right: 8px;
+                        font-size: 1.5rem;
+                    }
+
+                    /* Optional: Change color on hover */
+                    /* .contact-link:hover .phone-icon,
+                    .contact-link:hover .whatsapp-icon {
+                        color: #f1c40f;
+                        /* Yellow on hover */
+                    } */
+
+                    /* .contact-link:hover {
+                        text-decoration: underline;
+                    } */
+                </style>
 
                 {{-- <div class="col-md-12">
                     <div class="card">
@@ -861,7 +910,7 @@
 
 
 
-               
+
 
             </div>
         </div>
