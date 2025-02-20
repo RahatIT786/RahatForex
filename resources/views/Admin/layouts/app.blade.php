@@ -19,9 +19,12 @@
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link rel="stylesheet" href= "{{ asset('admin/assets/css/demo.css') }}" />
     <!-- Font Awesome CDN -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    @livewireStyles
 </head>
 
 <body>
@@ -34,26 +37,13 @@
         <main class="page-content">
             @include('Admin.includes.navbar')
 
-        <div class="main">
-            {{ $slot }}
-        </div>
+            <div class="main">
+                {{ $slot }}
+            </div>
         </main>
 
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @livewireScripts
 </body>
 
 <script src="{{ asset('admin/assets/js/core/jquery-3.7.1.min.js') }}"></script>
@@ -88,6 +78,8 @@
 <!-- Kaiadmin JS -->
 <script src="{{ asset('admin/assets/js/kaiadmin.min.js') }}"></script>
 <!-- Bootstrap CSS -->
+<!-- Add Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
 <!-- Bootstrap JS (for dropdown functionality) -->
@@ -97,23 +89,25 @@
 <!-- Kaiadmin DEMO methods, don't include it in your project! -->
 <script src="{{ asset('admin/assets/js/setting-demo.js') }}"></script>
 <script src="{{ asset('admin/assets/js/demo.js') }}"></script>
-<script src= "{{ asset('admin/assets/js/plugin/webfont/webfont.min.js') }} "></script>
+<script src="{{ asset('admin/assets/js/plugin/webfont/webfont.min.js') }} "></script>
 <script>
-  WebFont.load({
-    google: { families: ["Public Sans:300,400,500,600,700"] },
-    custom: {
-      families: [
-        "Font Awesome 5 Solid",
-        "Font Awesome 5 Regular",
-        "Font Awesome 5 Brands",
-        "simple-line-icons",
-      ],
-      urls: ["../assets/css/fonts.min.css"],
-    },
-    active: function () {
-      sessionStorage.fonts = true;
-    },
-  });
+    WebFont.load({
+        google: {
+            families: ["Public Sans:300,400,500,600,700"]
+        },
+        custom: {
+            families: [
+                "Font Awesome 5 Solid",
+                "Font Awesome 5 Regular",
+                "Font Awesome 5 Brands",
+                "simple-line-icons",
+            ],
+            urls: ["../assets/css/fonts.min.css"],
+        },
+        active: function() {
+            sessionStorage.fonts = true;
+        },
+    });
 </script>
 <script>
     $("#lineChart").sparkline([102, 109, 120, 99, 110, 105, 115], {

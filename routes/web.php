@@ -17,6 +17,7 @@ use App\Livewire\Admin\ForexRequest;
 
 
 
+
 // start the user route
 
 Route::get('/', Home::class)->name('layouts.app');
@@ -35,6 +36,7 @@ Route::post('/login', [AuthController::class, 'login'])->name('admin.login.submi
 Route::middleware(['auth:admins'])->group(function () {
     Route::get('/admins', Dashboard::class)->name('admin.dashboard');
     Route::get('/admins/forex-request', ForexRequest::class)->name('admins.forex-request');
+    Route::post('/admin/logout',[AuthController::class,'logout'])->name('admin.logout');
 });
 
 Route::get('/run-seeder', function() {

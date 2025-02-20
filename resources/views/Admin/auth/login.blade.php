@@ -49,7 +49,7 @@
 
                                     <a  class="logo-light">
 
-                                        <img src="{{asset('user/logo/RAHAT_FOREX.png')}}" height="100" alt="logo dark">
+                                        <img src="{{asset('admin/assets/logo/rahat_forex_red_&_blue.png')}}" height="100" alt="logo dark">
                                     </a>
                                 </div>
                                 <h4 class="fw-bold text-dark mb-2">Admin Login</h3>
