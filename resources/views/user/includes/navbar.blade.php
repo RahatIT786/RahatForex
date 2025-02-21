@@ -20,7 +20,7 @@
                 <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
                     <ul class="navbar-nav  ">
                         <li class="nav-item ">
-                            <a class="nav-link" href="{{ route('historical') }}" target="blank"> About Us </a>
+                            <a class="nav-link" href="{{ route('historical') }}" > About Us </a>
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link" href="https://umrahrahat.com/" target="blank"> Umrah </a>
