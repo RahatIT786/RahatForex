@@ -36,6 +36,11 @@
     <link href="{{ asset('user/css/style.css') }}" rel="stylesheet" />
     <!-- responsive style -->
     <link href="{{ asset('user/css/responsive.css') }}" rel="stylesheet" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.6.6/css/flag-icons.min.css" integrity="sha512-KX2x5rqUWxUJcKqVkQ+QIPeS74y0pHnq6sHBa6El0fDzYJGoPlMVVqk7R2bAyXZ8PpNkOcHKoHk5KoqlGHF0Zw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
 </head>
 
 <body>
@@ -60,7 +65,11 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- owl carousel script
     -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 <script type="text/javascript">
+
     $(".owl-carousel").owlCarousel({
         loop: true,
         margin: 0,

@@ -22,7 +22,8 @@
                                                     The Future of Trading.
                                                 </h2> --}}
                                                 <div class="">
-                                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScx0WFry4uxu-ZvtHm7kfMcCfFpBj7YyuawppqFvQWU1__wnA/viewform?embedded=true&pli=1" target="blank">
+                                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScx0WFry4uxu-ZvtHm7kfMcCfFpBj7YyuawppqFvQWU1__wnA/viewform?embedded=true&pli=1"
+                                                        target="blank">
                                                         Enquiry Now
                                                     </a>
                                                 </div>
@@ -54,7 +55,8 @@
                                                     Compare quotes & get best exchange rates from RBI approved Forex Money Changers
                                                 </p> --}}
                                                 <div class="">
-                                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScx0WFry4uxu-ZvtHm7kfMcCfFpBj7YyuawppqFvQWU1__wnA/viewform?embedded=true&pli=1" target="blank">
+                                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScx0WFry4uxu-ZvtHm7kfMcCfFpBj7YyuawppqFvQWU1__wnA/viewform?embedded=true&pli=1"
+                                                        target="blank">
                                                         Enquiry Now
                                                     </a>
                                                 </div>
@@ -77,6 +79,7 @@
         </div>
 
     </div>
+
     <section class="how_section layout_padding">
         <div class="forex_container">
             <div class="Forex_nav">
@@ -84,16 +87,16 @@
                     <a href="">
                         <li> <i class="fa-solid fa-cart-shopping"></i> Buy Forex </li>
                     </a>
-                    <a href="">
+                    <a href="{{ route('sell-forex') }}">
                         <li> <i class="fa-brands fa-sellcast"></i> Sell Forex </li>
                     </a>
-                    <a href="">
+                    <a href="{{ route('reload-card') }}">
                         <li><i class="fa-regular fa-credit-card"></i> Reload Card </li>
                     </a>
-                    <a href="">
+                    <a href="{{ route('study-aboard') }}">
                         <li> <i class="fa-light fa-abacus"></i> Study Aboard </li>
                     </a>
-                    <a href="">
+                    <a href="{{ route('send-money') }}">
                         <li> <i class="fa-brands fa-gg-circle"></i> Send Money </li>
                     </a>
                     <a href="">
@@ -108,43 +111,53 @@
                 <form>
                     <div class="input_form">
                         <div class="form-row">
+
                             <label for="forex_amount">Enter Amount</label>
                             <input type="text" id="forex_amount" name="forex_amount" oninput="convertCurrency()">
                         </div>
                         <div class="form-row">
                             <label for="fromCountry">From</label>
                             <select id="fromCountry" name="fromCountry" onchange="convertCurrency()">
-                                <option value="">Select Country</option>
-                                <option value="Saudi Arabia" data-img="{{ asset('user/flag-icon/saudi-arabia.png') }}">
-                                    Saudi Arabia</option>
-                                <option value="USA">USA</option>
-                                <option value="UK">UK</option>
-                                <option value="UAE">UAE</option>
-                                <option value="Europe">Europe</option>
-
-                                <option value="India">India</option>
+                                <option value="">Select Currency</option>
+                                <option value="Saudi Arabia" data-img="{{ asset('user/flag-icon/saudi.png') }}"> SAR -
+                                    Saudi Arabian Riyals</option>
+                                <option value="USA"
+                                    data-img="{{ asset('user/flag-icon/united-states-of-america.png') }}"> USD - US
+                                    Dollars</option>
+                                <option value="UK" data-img="{{ asset('user/flag-icon/united-kingdom.png') }}"> GBP
+                                    - Pound Sterling</option>
+                                <option value="UAE" data-img="{{ asset('user/flag-icon/UAE.png') }}"> UAE - UAE
+                                    Dirham</option>
+                                <option value="Europe" data-img="{{ asset('user/flag-icon/european-union.png') }}"> EUR
+                                    - The Euro</option>
+                                <option value="India" data-img="{{ asset('user/flag-icon/indai.png') }}"> INR - Indian
+                                    Rupees</option>
                             </select>
                         </div>
-
                         <div class="form-row">
                             <label for="toCountry">To</label>
                             <select id="toCountry" name="toCountry" onchange="convertCurrency()">
-                                <option value="">Select Country</option>
-                                <option value="India">India</option>
-                                <option value="USA">USA</option>
-                                <option value="UK">UK</option>
-                                <option value="UAE">UAE</option>
-                                <option value="Europe">Europe</option>
-                                <option value="Saudi Arabia">Saudi Arabia</option>
-
+                                <option value="">Select Currency</option>
+                                <option value="India" data-img="{{ asset('user/flag-icon/indai.png') }}"> INR - Indian
+                                    Rupees</option>
+                                <option value="USA"
+                                    data-img="{{ asset('user/flag-icon/united-states-of-america.png') }}"> USD - US
+                                    Dollars</option>
+                                <option value="UK" data-img="{{ asset('user/flag-icon/united-kingdom.png') }}"> GBP
+                                    - Pound Sterling</option>
+                                <option value="UAE" data-img="{{ asset('user/flag-icon/UAE.png') }}"> UAE - UAE
+                                    Dirham</option>
+                                <option value="Europe" data-img="{{ asset('user/flag-icon/european-union.png') }}"> EUR
+                                    - The Euro</option>
+                                <option value="Saudi Arabia" data-img="{{ asset('user/flag-icon/saudi.png') }}"> SAR -
+                                    Saudi Arabian Riyals</option>
                             </select>
                         </div>
                     </div>
                 </form>
-
                 <div class="Convert">
-                    <div id="converted_amount"> </div>
-                    <div id="from_amount" ></div>
+                    <div id="converted_amount"></div>
+                    <div id="from_amount"></div>
                     <div id="total_money" class="total_money"></div>
                     <div id="rate_from_1"></div>
                     <div id="rate_to_1"></div>
@@ -153,7 +166,8 @@
 
                 <hr>
                 <div class="forex_submit">
-                    <p style="text-align:center ">Communication Details (Your order confirmation details will be sent to
+                    <p style="text-align:center ">Communication Details (Your order confirmation details will be sent
+                        to
                         these contact details)</p>
                     @if (session('success'))
                         <div class="alert alert-success text-center" id="alert-message">
@@ -190,77 +204,18 @@
                 </div>
             </div>
 
-            {{-- <script>
-                const apiKey = '593b72f2821a6b3e2d6a037b'; // Your API key
-                let exchangeRates = {}; // To store API response dynamically
 
-                async function fetchExchangeRates(baseCurrency) {
-                    try {
-                        let response = await fetch(`https://v6.exchangerate-api.com/v6/${apiKey}/latest/${baseCurrency}`);
-                        let data = await response.json();
-
-                        if (data.result === "success") {
-                            exchangeRates = data.conversion_rates; // Store updated rates
-                        } else {
-                            console.error("Error fetching exchange rates:", data.error);
-                        }
-                    } catch (error) {
-                        console.error("API request failed:", error);
-                    }
-                }
-
-                // Function to convert currency
-                async function convertCurrency() {
-                    let fromCountry = document.getElementById("fromCountry").value;
-                    let toCountry = document.getElementById("toCountry").value;
-                    let forexAmount = parseFloat(document.getElementById("forex_amount").value);
-                    let convertedAmountField = document.getElementById("converted_amount");
-
-                    if (!fromCountry || !toCountry || isNaN(forexAmount) || forexAmount <= 0) {
-                        convertedAmountField.innerHTML = "";
-                        return;
-                    }
-
-                    const currencyData = {
-                        "USA": "USD",
-                        "UK": "GBP",
-                        "UAE": "AED",
-                        "Europe": "EUR",
-                        "Saudi Arabia": "SAR",
-                        "India": "INR"
-                    };
-
-                    let fromCurrency = currencyData[fromCountry];
-                    let toCurrency = currencyData[toCountry];
-
-                    if (!fromCurrency || !toCurrency) {
-                        convertedAmountField.innerHTML = "Invalid selection";
-                        return;
-                    }
-
-                    // Fetch exchange rates using "fromCurrency" as the base
-                    await fetchExchangeRates(fromCurrency);
-
-                    if (exchangeRates[toCurrency]) {
-                        let convertedAmount = forexAmount * exchangeRates[toCurrency];
-                        convertedAmountField.innerHTML = convertedAmount.toFixed(2); // Show 2 decimal places
-                    } else {
-                        convertedAmountField.innerHTML = "Error fetching rates";
-                    }
-                }
-            </script> --}}
             <script>
-                const apiKey = '593b72f2821a6b3e2d6a037b'; // Your API key
-                let exchangeRates = {}; // To store API response dynamically
+                const apiKey = '593b72f2821a6b3e2d6a037b';
+                let exchangeRates = {};
 
-                // Fetch exchange rates
                 async function fetchExchangeRates(baseCurrency) {
                     try {
                         let response = await fetch(`https://v6.exchangerate-api.com/v6/${apiKey}/latest/${baseCurrency}`);
                         let data = await response.json();
 
                         if (data.result === "success") {
-                            exchangeRates = data.conversion_rates; // Store updated rates
+                            exchangeRates = data.conversion_rates;
                         } else {
                             console.error("Error fetching exchange rates:", data.error);
                         }
@@ -269,19 +224,16 @@
                     }
                 }
 
-                // Function to convert currency
                 async function convertCurrency() {
                     let fromCountry = document.getElementById("fromCountry").value;
                     let toCountry = document.getElementById("toCountry").value;
                     let forexAmount = parseFloat(document.getElementById("forex_amount").value);
 
-                    // Get div elements
                     let fromAmountDiv = document.getElementById("from_amount");
                     let totalMoneyDiv = document.getElementById("total_money");
                     let rateFrom1Div = document.getElementById("rate_from_1");
                     let rateTo1Div = document.getElementById("rate_to_1");
 
-                    // Ensure all required inputs are provided and valid
                     if (!fromCountry || !toCountry || isNaN(forexAmount) || forexAmount <= 0) {
                         fromAmountDiv.innerHTML = "";
                         totalMoneyDiv.innerHTML = "";
@@ -291,44 +243,61 @@
                     }
 
                     const currencyData = {
-                        "USA": "USD",
-                        "UK": "GBP",
-                        "UAE": "AED",
-                        "Europe": "EUR",
-                        "Saudi Arabia": "SAR",
-                        "India": "INR"
+                        "USA": {
+                            code: "USD",
+                            name: "US Dollars"
+                        },
+                        "UK": {
+                            code: "GBP",
+                            name: "Pound Sterling"
+                        },
+                        "UAE": {
+                            code: "AED",
+                            name: "UAE Dirham"
+                        },
+                        "Europe": {
+                            code: "EUR",
+                            name: "The Euro"
+                        },
+                        "Saudi Arabia": {
+                            code: "SAR",
+                            name: "Saudi Arabian Riyals"
+                        },
+                        "India": {
+                            code: "INR",
+                            name: "Indian Rupees"
+                        }
                     };
 
-                    let fromCurrency = currencyData[fromCountry];
-                    let toCurrency = currencyData[toCountry];
+                    let fromCurrencyData = currencyData[fromCountry];
+                    let toCurrencyData = currencyData[toCountry];
 
-                    if (!fromCurrency || !toCurrency) {
+                    if (!fromCurrencyData || !toCurrencyData) {
                         fromAmountDiv.innerHTML = "Invalid selection of countries.";
                         return;
                     }
 
-                    // Fetch exchange rates using "fromCurrency" as the base
+                    let fromCurrency = fromCurrencyData.code;
+                    let toCurrency = toCurrencyData.code;
+
                     await fetchExchangeRates(fromCurrency);
 
                     if (exchangeRates[toCurrency]) {
                         let convertedAmount = forexAmount * exchangeRates[toCurrency];
                         let rateTo1Currency = exchangeRates[toCurrency];
-                        let rateFrom1Currency = (1 / rateTo1Currency).toFixed(
-                        4); // Rate to convert 1 unit of target currency to base currency
+                        let rateFrom1Currency = (1 / rateTo1Currency).toFixed(4);
 
-                        // Display the results in separate divs
-                        fromAmountDiv.innerHTML = ` ${forexAmount} ${fromCountry} = `;
+                        fromAmountDiv.innerHTML = `${forexAmount} ${fromCurrencyData.name} = `;
                         totalMoneyDiv.innerHTML =
-                            `<span class="bold"> ${convertedAmount.toFixed(2)} ${toCountry}</span>`;
-                        rateFrom1Div.innerHTML = `1 ${fromCountry} = ${rateTo1Currency.toFixed(4)} ${toCountry}`;
-                        rateTo1Div.innerHTML = `1 ${toCountry} = ${rateFrom1Currency} ${fromCountry}`;
+                            `<span class="bold">${convertedAmount.toFixed(2)} ${toCurrencyData.name}</span>`;
+                        rateFrom1Div.innerHTML =
+                            `1 ${fromCurrencyData.name} = ${rateTo1Currency.toFixed(4)} ${toCurrencyData.name}`;
+                        rateTo1Div.innerHTML = `1 ${toCurrencyData.name} = ${rateFrom1Currency} ${fromCurrencyData.name}`;
                     } else {
                         fromAmountDiv.innerHTML = "Error fetching rates for the selected currencies.";
                     }
                 }
             </script>
-
-
 
 
 
