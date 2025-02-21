@@ -90,16 +90,16 @@
                     <a href="{{ route('sell-forex') }}">
                         <li> <i class="fa-brands fa-sellcast"></i> Sell Forex </li>
                     </a>
-                    <a href="{{ route('reload-card') }}">
+                    <a href="#">
                         <li><i class="fa-regular fa-credit-card"></i> Reload Card </li>
                     </a>
-                    <a href="{{ route('study-aboard') }}">
+                    <a href="#">
                         <li> <i class="fa-light fa-abacus"></i> Study Aboard </li>
                     </a>
-                    <a href="{{ route('send-money') }}">
+                    <a href="#">
                         <li> <i class="fa-brands fa-gg-circle"></i> Send Money </li>
                     </a>
-                    <a href="">
+                    <a href="#">
                         <li> More </li>
                     </a>
                 </ul>
@@ -119,38 +119,37 @@
                             <label for="fromCountry">From</label>
                             <select id="fromCountry" name="fromCountry" onchange="convertCurrency()">
                                 <option value="">Select Currency</option>
-                                <option value="Saudi Arabia" data-img="{{ asset('user/flag-icon/saudi.png') }}"> SAR -
-                                    Saudi Arabian Riyals</option>
-                                <option value="USA"
-                                    data-img="{{ asset('user/flag-icon/united-states-of-america.png') }}"> USD - US
-                                    Dollars</option>
-                                <option value="UK" data-img="{{ asset('user/flag-icon/united-kingdom.png') }}"> GBP
-                                    - Pound Sterling</option>
-                                <option value="UAE" data-img="{{ asset('user/flag-icon/UAE.png') }}"> UAE - UAE
-                                    Dirham</option>
-                                <option value="Europe" data-img="{{ asset('user/flag-icon/european-union.png') }}"> EUR
-                                    - The Euro</option>
-                                <option value="India" data-img="{{ asset('user/flag-icon/indai.png') }}"> INR - Indian
-                                    Rupees</option>
+                                <option value="Saudi Arabia" data-img="{{ asset('user/flag-icon/saudi.png') }}"> SAR -  Saudi Arabian Riyals</option>
+                                <option value="USA" data-img="{{ asset('user/flag-icon/united-states-of-america.png') }}"> USD - US   Dollars</option>
+                                <option value="UK" data-img="{{ asset('user/flag-icon/united-kingdom.png') }}"> GBP - Pound Sterling</option>
+                                <option value="UAE" data-img="{{ asset('user/flag-icon/UAE.png') }}"> UAE - UAE Dirham</option>
+                                <option value="Europe" data-img="{{ asset('user/flag-icon/european-union.png') }}"> EUR - The Euro</option>
+                                <option value="India" data-img="{{ asset('user/flag-icon/indai.png') }}"> INR - Indian Rupees</option>
+                                <option value="JPY" data-img="{{ asset('user/flag-icon/indai.png') }}">JPY - Japanese Yen</option>
+                                <option value="AUD" data-img="{{ asset('user/flag-icon/indai.png') }}"> AUD - Australian Dollar</option>
+                              <option value="CAD" data-img="{{ asset('user/flag-icon/indai.png') }}"> CAD - Canadian Dollar</option>
+                               <option value="SGD" data-img="{{ asset('user/flag-icon/indai.png') }}"> SGD - Singapore Dollar</option>
+
+
+
+
                             </select>
                         </div>
                         <div class="form-row">
                             <label for="toCountry">To</label>
                             <select id="toCountry" name="toCountry" onchange="convertCurrency()">
                                 <option value="">Select Currency</option>
-                                <option value="India" data-img="{{ asset('user/flag-icon/indai.png') }}"> INR - Indian
-                                    Rupees</option>
-                                <option value="USA"
-                                    data-img="{{ asset('user/flag-icon/united-states-of-america.png') }}"> USD - US
-                                    Dollars</option>
-                                <option value="UK" data-img="{{ asset('user/flag-icon/united-kingdom.png') }}"> GBP
-                                    - Pound Sterling</option>
-                                <option value="UAE" data-img="{{ asset('user/flag-icon/UAE.png') }}"> UAE - UAE
-                                    Dirham</option>
-                                <option value="Europe" data-img="{{ asset('user/flag-icon/european-union.png') }}"> EUR
-                                    - The Euro</option>
-                                <option value="Saudi Arabia" data-img="{{ asset('user/flag-icon/saudi.png') }}"> SAR -
-                                    Saudi Arabian Riyals</option>
+                                <option value="India" data-img="{{ asset('user/flag-icon/indai.png') }}"> INR - Indian Rupees </option>
+                                <option value="USA" data-img="{{ asset('user/flag-icon/united-states-of-america.png') }}"> USD - US  Dollars</option>
+                                <option value="UK" data-img="{{ asset('user/flag-icon/united-kingdom.png') }}"> GBP - Pound Sterling</option>
+                                <option value="UAE" data-img="{{ asset('user/flag-icon/UAE.png') }}"> UAE - UAE  Dirham</option>
+                                <option value="Europe" data-img="{{ asset('user/flag-icon/european-union.png') }}"> EUR - The Euro</option>
+                                <option value="Saudi Arabia" data-img="{{ asset('user/flag-icon/saudi.png') }}"> SAR - Saudi Arabian Riyals</option>
+                                <option value="JPY" data-img="{{ asset('user/flag-icon/indai.png') }}">JPY - Japanese Yen</option>
+                                <option value="AUD" data-img="{{ asset('user/flag-icon/indai.png') }}"> AUD - Australian Dollar</option>
+                              <option value="CAD" data-img="{{ asset('user/flag-icon/indai.png') }}"> CAD - Canadian Dollar</option>
+                               <option value="SGD" data-img="{{ asset('user/flag-icon/indai.png') }}"> SGD - Singapore Dollar</option>
+
                             </select>
                         </div>
                     </div>
@@ -205,6 +204,7 @@
             </div>
 
 
+
             <script>
                 const apiKey = '593b72f2821a6b3e2d6a037b';
                 let exchangeRates = {};
@@ -234,7 +234,8 @@
                     let rateFrom1Div = document.getElementById("rate_from_1");
                     let rateTo1Div = document.getElementById("rate_to_1");
 
-                    if (!fromCountry || !toCountry || isNaN(forexAmount) || forexAmount <= 0) {
+                    // Reset fields if inputs are invalid
+                    if (!fromCountry || !toCountry || isNaN(forexAmount)) {
                         fromAmountDiv.innerHTML = "";
                         totalMoneyDiv.innerHTML = "";
                         rateFrom1Div.innerHTML = "";
@@ -242,31 +243,18 @@
                         return;
                     }
 
+                    // Currency Data Mapping
                     const currencyData = {
-                        "USA": {
-                            code: "USD",
-                            name: "US Dollars"
-                        },
-                        "UK": {
-                            code: "GBP",
-                            name: "Pound Sterling"
-                        },
-                        "UAE": {
-                            code: "AED",
-                            name: "UAE Dirham"
-                        },
-                        "Europe": {
-                            code: "EUR",
-                            name: "The Euro"
-                        },
-                        "Saudi Arabia": {
-                            code: "SAR",
-                            name: "Saudi Arabian Riyals"
-                        },
-                        "India": {
-                            code: "INR",
-                            name: "Indian Rupees"
-                        }
+                        "USA": { code: "USD", name: "US Dollars" },
+                        "UK": { code: "GBP", name: "Pound Sterling" },
+                        "UAE": { code: "AED", name: "UAE Dirham" },
+                        "Europe": { code: "EUR", name: "The Euro" },
+                        "Saudi Arabia": { code: "SAR", name: "Saudi Arabian Riyals" },
+                        "India": { code: "INR", name: "Indian Rupees" },
+                        "JPY": { code: "JPY", name: "Japanese Yen" },
+                        "AUD": { code: "AUD", name: "Australian Dollar" },
+                          "CAD": { code: "CAD", name: "Canadian Dollar" },
+                           "SGD": { code: "SGD", name: "Singapore Dollar" }
                     };
 
                     let fromCurrencyData = currencyData[fromCountry];
@@ -280,24 +268,35 @@
                     let fromCurrency = fromCurrencyData.code;
                     let toCurrency = toCurrencyData.code;
 
+                    // Fetch Exchange Rates
                     await fetchExchangeRates(fromCurrency);
 
                     if (exchangeRates[toCurrency]) {
                         let convertedAmount = forexAmount * exchangeRates[toCurrency];
+
+                        // Subtract 0.50 from the converted amount
+                        let reducedAmount = convertedAmount - 0.50;
+
+                        // Fix floating point precision and ensure two decimal places
+                        reducedAmount = Math.round((reducedAmount + Number.EPSILON) * 100) / 100;
+
                         let rateTo1Currency = exchangeRates[toCurrency];
                         let rateFrom1Currency = (1 / rateTo1Currency).toFixed(4);
 
+                        // Display Results
                         fromAmountDiv.innerHTML = `${forexAmount} ${fromCurrencyData.name} = `;
                         totalMoneyDiv.innerHTML =
-                            `<span class="bold">${convertedAmount.toFixed(2)} ${toCurrencyData.name}</span>`;
+                            `<span class="bold">${reducedAmount.toFixed(2)} ${toCurrencyData.name}</span> `;
                         rateFrom1Div.innerHTML =
                             `1 ${fromCurrencyData.name} = ${rateTo1Currency.toFixed(4)} ${toCurrencyData.name}`;
-                        rateTo1Div.innerHTML = `1 ${toCurrencyData.name} = ${rateFrom1Currency} ${fromCurrencyData.name}`;
+                        rateTo1Div.innerHTML =
+                            `1 ${toCurrencyData.name} = ${rateFrom1Currency} ${fromCurrencyData.name}`;
                     } else {
                         fromAmountDiv.innerHTML = "Error fetching rates for the selected currencies.";
                     }
                 }
             </script>
+
 
 
 
