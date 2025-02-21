@@ -1,7 +1,11 @@
 <?php
 
-
+// user component
 use App\Livewire\User\Home;
+use App\Livewire\User\SellForex;
+use App\Livewire\User\ReloadCard;
+use App\Livewire\User\StudyAboard;
+use App\Livewire\User\SendMoney;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\User\HistoricalData;
@@ -21,7 +25,12 @@ use App\Livewire\Admin\ForexRequest;
 // start the user route
 
 Route::get('/', Home::class)->name('layouts.app');
+
 Route::get('/historical', HistoricalData::class)->name('historical');
+Route::get('sell-forex',SellForex::class)->name('sell-forex');
+Route::get('reload-card',ReloadCard::class)->name('reload-card');
+Route::get('study-aboard',StudyAboard::class)->name('study-aboard');
+Route::get('send-money',SendMoney::class)->name('send-money');
 
 Route::post('/quote/mail',[UserController::class,'submitForm'] )->name('quote.mail');
 

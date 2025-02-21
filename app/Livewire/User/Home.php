@@ -38,9 +38,10 @@ class Home extends Component
             'email' => $this->email,
         ];
 
+
         MoneyForex::create($data);
         // Send the email with the data
-        Mail::to('forex@rahat.in')->send(new QuoteRequestMail($data));
+        Mail::to(['forex@rahat.in', 'nazim@rahat.in'])->send(new QuoteRequestMail($data));
 
         // Optionally reset the form fields after submission
         $this->reset();
