@@ -114,7 +114,7 @@
                     </div>
                 @endif
 
-                <form wire:submit.prevent="submitForm">
+                <form wire:submit.prevent="submitSell">
                     <div class="submit_forms">
                         <div class="form_mobile">
                             <input type="text" wire:model="name" placeholder="Enter name" min="1">
@@ -183,16 +183,46 @@
 
                 // Currency Data Mapping
                 const currencyData = {
-                    "USA": { code: "USD", name: "US Dollars" },
-                    "UK": { code: "GBP", name: "Pound Sterling" },
-                    "UAE": { code: "AED", name: "UAE Dirham" },
-                    "Europe": { code: "EUR", name: "The Euro" },
-                    "Saudi Arabia": { code: "SAR", name: "Saudi Arabian Riyals" },
-                    "India": { code: "INR", name: "Indian Rupees" },
-                    "JPY": { code: "JPY", name: "Japanese Yen" },
-                    "AUD": { code: "AUD", name: "Australian Dollar" },
-                    "CAD": { code: "CAD", name: "Canadian Dollar" },
-                    "SGD": { code: "SGD", name: "Singapore Dollar" }
+                    "USA": {
+                        code: "USD",
+                        name: "US Dollars"
+                    },
+                    "UK": {
+                        code: "GBP",
+                        name: "Pound Sterling"
+                    },
+                    "UAE": {
+                        code: "AED",
+                        name: "UAE Dirham"
+                    },
+                    "Europe": {
+                        code: "EUR",
+                        name: "The Euro"
+                    },
+                    "Saudi Arabia": {
+                        code: "SAR",
+                        name: "Saudi Arabian Riyals"
+                    },
+                    "India": {
+                        code: "INR",
+                        name: "Indian Rupees"
+                    },
+                    "JPY": {
+                        code: "JPY",
+                        name: "Japanese Yen"
+                    },
+                    "AUD": {
+                        code: "AUD",
+                        name: "Australian Dollar"
+                    },
+                    "CAD": {
+                        code: "CAD",
+                        name: "Canadian Dollar"
+                    },
+                    "SGD": {
+                        code: "SGD",
+                        name: "Singapore Dollar"
+                    }
                 };
 
                 let fromCurrencyData = currencyData[fromCountry];
