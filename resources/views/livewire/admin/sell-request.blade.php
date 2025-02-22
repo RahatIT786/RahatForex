@@ -2,7 +2,7 @@
     <div class="container">
         <div class="page-inner">
             <div class="page-header">
-                <h3 class="fw-bold mb-3">All Request Buy Forex</h3>
+                <h3 class="fw-bold mb-3">All Request Sell Forex</h3>
                 {{-- <ul class="breadcrumbs mb-3">
                     <li class="nav-home">
                         <a href="#">
@@ -27,7 +27,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Buy Forex</h4>
+                            <h4 class="card-title"> Sell Forex</h4>
                             @if (session()->has('message'))
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                                     {{ session('message') }}
@@ -51,31 +51,31 @@
 
                                         </tr>
                                     <tbody>
-                                        @foreach ($Forexmoney as $forex)
+                                        @foreach ( $sellforex as $sell)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $forex->name }}</td>
+                                                <td>{{ $sell->name }}</td>
                                                 <td>
-                                                    <a href="tel:{{ $forex->mobile }}" class="contact-link">
+                                                    <a href="tel:{{ $sell->mobile }}" class="contact-link">
                                                         <i class="fa-solid fa-phone phone-icon"></i>
                                                     </a>
-                                                    <a href="https://wa.me/{{ $forex->mobile }}" class="contact-link"
+                                                    <a href="https://wa.me/{{ $sell->mobile }}" class="contact-link"
                                                         target="_blank">
                                                         <i class="fa-brands fa-whatsapp whatsapp-icon"></i>
                                                     </a>
 
-                                                    {{ $forex->mobile }}
+                                                    {{ $sell->mobile }}
 
                                                 </td>
 
                                                 <td>
-                                                    <a href="mailto:{{ $forex->email }}">
+                                                    <a href="mailto:{{ $sell->email }}">
                                                         <i class="fa-solid fa-envelope phone-icon"></i> </a>
-                                                    {{ $forex->email }}
+                                                    {{ $sell->email }}
                                                 </td>
 
                                                 <td>
-                                                    <i wire:click="delete({{ $forex->id }})"
+                                                    <i wire:click="delete({{ $sell->id }})"
                                                         wire:loading.attr="disabled"
                                                         class="fa-solid fa-trash text-danger"></i>
                                                 </td>
@@ -87,9 +87,9 @@
 
                                 </table>
 
-                                <div class="mt-4 d-flex justify-content-end">
+                                {{-- <div class="mt-4 d-flex justify-content-end">
                                     {{ $Forexmoney->links('pagination::bootstrap-5') }}
-                                </div>
+                                </div> --}}
 
 
                             </div>
@@ -210,17 +210,8 @@
                     }
                 </style>
 
-
-
-
-                <!-- Blade View -->
-
-
-
-
-
-
             </div>
         </div>
     </div>
 </div>
+

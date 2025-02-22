@@ -54,7 +54,12 @@
                         <ul class="nav nav-collapse">
                             <li>
                                 <a href="{{ route('admins.forex-request') }}">
-                                    <span class="sub-item">All Request</span>
+                                    <span class="sub-item">Buy Forex All Request</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('admins.sell-request') }}">
+                                    <span class="sub-item">Sell Forex All Request</span>
                                 </a>
                             </li>
 

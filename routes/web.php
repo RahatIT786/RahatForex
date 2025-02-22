@@ -16,6 +16,7 @@ use App\Http\Controllers\AuthController;
 
 use App\Livewire\Admin\Dashboard;
 use App\Livewire\Admin\ForexRequest;
+use App\Livewire\Admin\SellRequest;
 
 
 
@@ -41,10 +42,13 @@ Route::get('/migrate' ,[UserController::class,'migrate']);
 Route::get('/login',[AuthController::class,'adminLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('admin.login.submit');
 
+
+
 // start the  Admin route
 Route::middleware(['auth:admins'])->group(function () {
     Route::get('/admins', Dashboard::class)->name('admin.dashboard');
     Route::get('/admins/forex-request', ForexRequest::class)->name('admins.forex-request');
+    Route::get('/admins/sell-requets',SellRequest::class)->name('admins.sell-request');
     Route::post('/admin/logout',[AuthController::class,'logout'])->name('admin.logout');
 });
 

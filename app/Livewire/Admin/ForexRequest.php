@@ -11,6 +11,7 @@ class ForexRequest extends Component
     use WithPagination; // Include pagination support
 
     public $forexCount;
+   
 
     public function mount()
     {
