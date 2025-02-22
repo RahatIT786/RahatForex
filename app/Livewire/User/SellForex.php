@@ -3,7 +3,7 @@
 namespace App\Livewire\User;
 
 use Livewire\Component;
-use App\Models\SellsForex;
+use App\Models\Sellsforex;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SellForexMail;
 
