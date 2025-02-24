@@ -2,8 +2,8 @@
     <div class="container-fluid">
         {{-- <h3 style="color: white;  margin-left:40%; margin-top:50px;" >FOREIGN EXCHANGE </h3> --}}
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-            <a class="navbar-brandkhjdhjkfd" href="{{ route('layouts.app') }}">
-                <img src= "{{ asset('user/logo/RAHAT_FOREX.png') }}" alt="" style="width: 12rem">
+            <a class="navbar-brandkhjdhjkfd" href="{{ route('layouts.app') }}" style="margin-left: 60px;">
+                <img src= "{{ asset('user/logo/RAHAT_FOREX.png') }}" alt="" style="width: 12rem;">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,8 +12,8 @@
 
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <div style="margin-left:40px;">
-                   <img src="{{asset('user/logo/FOREIGN_EXCHANGE.png')}}" alt="" style="width: 15rem; height:4rem">
+                <div style="margin-left:80px;">
+                   <img src="{{asset('user/logo/FOREIGN EXCHANGE.png')}}" alt="" style="width: 15rem; height:7rem;">
                 </div>
 
 
